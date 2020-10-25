@@ -9,6 +9,7 @@ buffes de protocolo são um mecanismo extensível para  serializar dados estrutu
 
 <p>Uso do Tensorflow 2.0 
 <p>Uso do protoc 3.13
+<p>Instalação do models do Tensorflow: <a href="https://github.com/tensorflow/models">models</a>
 
 <p>Uso do dataset coco: <a href="https://cocodataset.org/">coco API</a>
 
