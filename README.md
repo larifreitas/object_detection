@@ -1,16 +1,8 @@
-buffes de protocolo são um mecanismo extensível para  serializar dados estruturados, sendo necessário ára a execução e  descongelamento do modelo treinado frozen graph.
+No projeto de estudo antigo era usado o TF, que já estava se encontrando obsoleto, mudei para o modelo Yolov8, bem mais leve e mais limpo, onde não precisa sem usado mais protocolBuffers, o modelo não pecisa mais ser baixado manualmente e não precisa mais ser carregado label_map.pbtxt
 
-<p>Fazer unzip e compilação: 
-<a href="https://github.com/protocolbuffers/protobuf/releases">Buffers aqui</a>
-
-<p>compilação em models/research: $ protoc object_detection/protos/*.proto --python_out=.
-
-<p><p>Dependência: pip install tensorflow-object-detection-api
-
-<p>Uso do Tensorflow 2.0 
-<p>Uso do protoc 3.13
-<p>Instalação do models do Tensorflow: <a href="https://github.com/tensorflow/models">models</a>
-
-<p>Uso do dataset coco: <a href="https://cocodataset.org/">coco API</a>
-
-Estudo principal em: https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/
+Funcionamento atual:
+- O modelo é carregado automaticamente
+- Frame passa pelo modelo
+- O modelo faz a detecção filtrando somente a classe 0 do COCO, sendo Person
+- Retorna as coordenadas do bounding box
+- É desenhado o bbox e a confiança
